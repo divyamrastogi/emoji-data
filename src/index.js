@@ -84,6 +84,7 @@ async function init() {
     console.log("\x1Bc");
     console.log("Generating sprite sheets...");
     await empty(path.join(config.outAssetsPath, "*"));
+    await empty(path.join(config.outDataPath, "*"));
     emojis = await generateSpriteSheet(emojis);
   } catch (e) {
     console.error(e);
@@ -92,8 +93,6 @@ async function init() {
 
   console.log("\x1Bc");
   console.log("Saving output...");
-
-  await empty(path.join(config.outDataPath, "*"));
   await saveOutput("categories.json", categories);
   await saveOutput("emoticons.json", emoticons);
   await saveOutput("emojis.json", emojis);

@@ -1,10 +1,1 @@
-[
-  { "name": "Smileys & People", "id": "people", "order": 0 },
-  { "name": "Animals & Nature", "id": "nature", "order": 1 },
-  { "name": "Food & Drink", "id": "food-drink", "order": 2 },
-  { "name": "Activity", "id": "activity", "order": 3 },
-  { "name": "Travel & Places", "id": "travel-places", "order": 4 },
-  { "name": "Objects", "id": "objects", "order": 5 },
-  { "name": "Symbols", "id": "symbols", "order": 6 },
-  { "name": "Flags", "id": "flags", "order": 7 }
-]
+[{"name":"Smileys & People","id":"people","order":0},{"name":"Animals & Nature","id":"nature","order":1},{"name":"Food & Drink","id":"food-drink","order":2},{"name":"Activity","id":"activity","order":3},{"name":"Travel & Places","id":"travel-places","order":4},{"name":"Objects","id":"objects","order":5},{"name":"Symbols","id":"symbols","order":6},{"name":"Flags","id":"flags","order":7}]
