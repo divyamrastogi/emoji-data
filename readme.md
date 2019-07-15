@@ -16,4 +16,4 @@ After cloning the repository, run `npm install`.
 Running the build script for the first time can be very time consuming, taking 2+ hours.
 Subsequent builds are faster, taking a couple of minutes only.
 
-For a fresh build, run `npm run build` (node > 10).
+For a fresh build, run `npm run build`.
