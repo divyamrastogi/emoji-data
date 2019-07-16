@@ -26,7 +26,6 @@ const {
 const { saveOutput } = require("./utils/store");
 
 async function init() {
-  console.log("\x1Bc");
   console.log("Loading data...");
 
   try {
@@ -68,10 +67,6 @@ async function init() {
 
       emojis.push(emojiData);
       emojiOrder += 1;
-
-      console.log("\x1Bc");
-      console.log("Loading data...");
-      console.log(emojiData.order, emojiData.native);
     }
   }
 
@@ -81,7 +76,6 @@ async function init() {
   emojis = fixOrder(emojis);
 
   try {
-    console.log("\x1Bc");
     console.log("Generating sprite sheets...");
     await empty(path.join(config.outAssetsPath, "*"));
     await empty(path.join(config.outDataPath, "*"));
@@ -91,7 +85,6 @@ async function init() {
     return;
   }
 
-  console.log("\x1Bc");
   console.log("Saving output...");
   await saveOutput("categories.json", categories);
   await saveOutput("emoticons.json", emoticons);
@@ -100,7 +93,6 @@ async function init() {
   await saveOutput("regex.json", getRegex());
   await delay(1000);
 
-  console.log("\x1Bc");
   console.log("Data files");
   console.log("# Categories", path.join(config.outDataPath, "categories.json"));
   console.log("# Emojis", path.join(config.outDataPath, "emojis.json"));

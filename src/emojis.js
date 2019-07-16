@@ -1,4 +1,6 @@
 const cheerio = require("cheerio");
+const { emojipediaUrl } = require("./data/config");
+const duplicates = require("./data/duplicates");
 const emoticons = require("./data/emoticons");
 const { getEmojiPage, getEmojiImage } = require("./utils/http");
 const { getIdFromUrl } = require("./utils/misc");
@@ -84,6 +86,7 @@ function getEmojiEmoticons(id) {
 }
 
 function getEmojiSkinsUrls($, id, name) {
+  const checkById = duplicates.bySkins.includes(id);
   const skins = [];
   let $ul;
   $("h2").each(function() {
@@ -102,18 +105,14 @@ function getEmojiSkinsUrls($, id, name) {
         return false;
       }
       const $this = $(this);
-      const text = $this
-        .find("a")
-        .first()
-        .text()
-        .toLowerCase();
-      if (
-        text.indexOf("skin tone") > -1 &&
-        text.indexOf(name.toLowerCase()) > -1
-      ) {
-        const $a = $this.find("a").first();
-        const url = $a.attr("href");
-        if (url && url.startsWith(`/${id}-type`) > -1) {
+      const $a = $this.find("a").first();
+      const text = $a.text().toLowerCase();
+      const url = $a.attr("href");
+      if (text && url && text.indexOf("skin tone") > -1) {
+        if (
+          (!checkById && text.indexOf(name.toLowerCase()) > -1) ||
+          (checkById && url.startsWith(`/${id}`))
+        ) {
           skins.push(url);
           count++;
         }
@@ -233,6 +232,8 @@ async function getEmojiPageData(
     } else {
       return;
     }
+
+    console.log(emoji.native, `${emojipediaUrl}/${emoji.id}`);
 
     if (!isSkin) {
       const skinsUrls = getEmojiSkinsUrls($, id, name);

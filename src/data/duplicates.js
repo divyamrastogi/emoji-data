@@ -58,6 +58,47 @@ module.exports = {
     ["bicyclist", "man-biking"],
     ["mountain-bicyclist", "man-mountain-biking"],
     ["water-polo", "man-playing-water-polo"],
-    ["juggling", "man-juggling"]
+    ["juggling", "man-juggling"],
+    ["women-with-bunny-ears-partying", "woman-with-bunny-ears"],
+    ["person-with-blond-hair", "blond-man"],
+    ["superhero", "woman-superhero"],
+    ["fairy", "woman-fairy"],
+    ["vampire", "woman-vampire"],
+    ["kiss", "kiss-woman-man"],
+    ["family", "family-man-woman-boy"]
+  ],
+
+  // When checking for skin variations, the default is to compare emoji names.
+  // However, these emojis require id comparison instead.
+  bySkins: [
+    "bearded-person",
+    "blond-man",
+    "blonde-woman",
+    "man-bald",
+    "man-curly-haired",
+    "man-dancing",
+    "man-red-haired",
+    "man-white-haired",
+    "woman-bald",
+    "woman-curly-haired",
+    "woman-red-haired",
+    "woman-white-haired"
+  ],
+
+  // Some gender neutral emoji will show different genders depending on the vendor.
+  // This is not being used yet. First, I need to figure what to do.
+  // 0 - neutral emoji
+  // 1 - apple emoji
+  // 2 - google emoji
+  byVendor: [
+    ["face-palm", "man-facepalming", "woman-facepalming"],
+    ["supervillain", "woman-supervillain", "man-supervillain"],
+    ["merperson", "merman", "merwoman"],
+    ["elf", "man-elf", "woman-elf"],
+    ["genie", "man-genie", "woman-genie"],
+    ["zombie", "man-zombie", "woman-zombie"],
+    ["person-in-steamy-room", "man-in-steamy-room", "woman-in-steamy-room"],
+    ["wrestlers", "women-wrestling", "men-wrestling"],
+    ["handball", "woman-playing-handball", "man-playing-handball"]
   ]
 };

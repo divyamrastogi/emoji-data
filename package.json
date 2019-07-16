@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node ./src"
+    "build": "cross-env VIPS_DISC_THRESHOLD=500m node ./src"
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "cross-env": "^5.2.0",
     "emoji-datasource": "^4.1.0",
     "emoji-regex": "^8.0.0",
     "emojilib": "^2.4.0",
