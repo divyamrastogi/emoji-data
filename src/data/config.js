@@ -4,7 +4,7 @@ const tmpPath = path.resolve(__dirname, "../../tmp");
 
 module.exports = {
   emojipediaUrl: "https://emojipedia.org",
-  emojiSize: 74,
+  emojiSize: 152,
   emojiSpriteSize: 40,
   outDataPath: path.resolve(__dirname, "../../data"),
   outAssetsPath: path.resolve(__dirname, "../../images"),
